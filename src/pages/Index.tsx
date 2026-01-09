@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Progress } from '@/components/ui/progress';
 import Icon from '@/components/ui/icon';
 
 export default function Index() {
@@ -34,90 +33,72 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-pink-600/10 to-orange-600/10"></div>
-        <div className="relative max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-6 animate-fade-in">
-            <span className="text-gradient">Преображение</span>
-            <br />
-            начинается сегодня
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 text-gray-900">
+            Здоровое похудение
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto animate-fade-in">
-            Индивидуальная программа похудения с гарантированным результатом. 
-            Без диет, без стресса, только эффективные методики.
+          <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto font-light">
+            Индивидуальная программа с научным подходом и гарантированным результатом
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
-            <Button size="lg" className="gradient-purple text-white text-lg px-8 py-6 hover-lift">
-              Начать сейчас
-              <Icon name="ArrowRight" size={20} className="ml-2" />
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-2 hover-lift">
-              Узнать больше
-            </Button>
-          </div>
+          <Button size="lg" className="telegram-blue text-white text-lg px-10 py-6 rounded-lg shadow-sm hover:shadow-md transition-all">
+            <Icon name="Send" size={20} className="mr-2" />
+            Подписаться в Telegram
+          </Button>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4">
-            Почему выбирают нас
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16 text-gray-900">
+            Преимущества
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
-            Научный подход и персональное сопровождение на каждом этапе
-          </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 icon: 'Target',
                 title: 'Индивидуальный подход',
-                description: 'Программа адаптируется под ваш образ жизни, предпочтения и особенности организма',
-                gradient: 'gradient-purple'
+                description: 'Программа адаптируется под ваш образ жизни и особенности организма'
               },
               {
                 icon: 'TrendingUp',
                 title: 'Гарантия результата',
-                description: '95% клиентов достигают целевого веса в течение 3 месяцев',
-                gradient: 'gradient-orange'
+                description: '95% клиентов достигают целевого веса в течение 3 месяцев'
               },
               {
                 icon: 'Users',
                 title: 'Поддержка 24/7',
-                description: 'Команда экспертов всегда на связи для консультаций и мотивации',
-                gradient: 'gradient-blue'
+                description: 'Команда экспертов всегда на связи для консультаций'
               },
               {
                 icon: 'Award',
                 title: 'Научный подход',
-                description: 'Методики основаны на последних исследованиях в области диетологии',
-                gradient: 'gradient-purple'
+                description: 'Методики основаны на последних исследованиях в диетологии'
               },
               {
                 icon: 'Heart',
                 title: 'Здоровье прежде всего',
-                description: 'Мы фокусируемся на улучшении общего самочувствия, а не только на цифрах',
-                gradient: 'gradient-orange'
+                description: 'Фокус на улучшении общего самочувствия'
               },
               {
                 icon: 'Zap',
                 title: 'Быстрый старт',
-                description: 'Первые результаты заметны уже через 2 недели',
-                gradient: 'gradient-blue'
+                description: 'Первые результаты заметны через 2 недели'
               }
             ].map((benefit, index) => (
-              <Card key={index} className="hover-lift border-2 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card key={index} className="border-0 shadow-sm hover:shadow-md transition-shadow bg-white">
                 <CardHeader>
-                  <div className={`w-16 h-16 rounded-2xl ${benefit.gradient} flex items-center justify-center mb-4 animate-float`}>
-                    <Icon name={benefit.icon as any} size={32} className="text-white" />
+                  <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center mb-4">
+                    <Icon name={benefit.icon as any} size={24} className="text-gray-900" />
                   </div>
-                  <CardTitle className="text-2xl">{benefit.title}</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-gray-900">{benefit.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base text-gray-600">
+                  <CardDescription className="text-base text-gray-600 font-light">
                     {benefit.description}
                   </CardDescription>
                 </CardContent>
@@ -128,142 +109,96 @@ export default function Index() {
       </section>
 
       {/* Calculator Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-100 via-pink-100 to-orange-100">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4">
-            Калькулятор идеального веса
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-gray-900">
+            Калькулятор веса
           </h2>
-          <p className="text-xl text-gray-700 text-center mb-12">
-            Узнайте свой план достижения цели за 30 секунд
+          <p className="text-lg text-gray-600 text-center mb-12 font-light">
+            Узнайте свой план достижения цели
           </p>
 
-          <Card className="shadow-2xl border-0">
-            <CardHeader className="gradient-purple text-white rounded-t-xl">
-              <CardTitle className="text-2xl text-white">Введите ваши данные</CardTitle>
-              <CardDescription className="text-purple-100">
+          <Card className="shadow-sm border-gray-200">
+            <CardHeader className="bg-gray-50 border-b border-gray-200">
+              <CardTitle className="text-xl text-gray-900">Введите ваши данные</CardTitle>
+              <CardDescription className="text-gray-600">
                 Мы рассчитаем индивидуальный план похудения
               </CardDescription>
             </CardHeader>
             <CardContent className="p-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                 <div className="space-y-2">
-                  <Label htmlFor="weight" className="text-lg">Текущий вес (кг)</Label>
+                  <Label htmlFor="weight" className="text-sm font-medium text-gray-700">Текущий вес (кг)</Label>
                   <Input
                     id="weight"
                     type="number"
                     placeholder="75"
                     value={weight}
                     onChange={(e) => setWeight(e.target.value)}
-                    className="text-lg h-12"
+                    className="h-11"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="height" className="text-lg">Рост (см)</Label>
+                  <Label htmlFor="height" className="text-sm font-medium text-gray-700">Рост (см)</Label>
                   <Input
                     id="height"
                     type="number"
                     placeholder="170"
                     value={height}
                     onChange={(e) => setHeight(e.target.value)}
-                    className="text-lg h-12"
+                    className="h-11"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="target" className="text-lg">Целевой вес (кг)</Label>
+                  <Label htmlFor="target" className="text-sm font-medium text-gray-700">Целевой вес (кг)</Label>
                   <Input
                     id="target"
                     type="number"
                     placeholder="65"
                     value={targetWeight}
                     onChange={(e) => setTargetWeight(e.target.value)}
-                    className="text-lg h-12"
+                    className="h-11"
                   />
                 </div>
               </div>
 
               <Button 
                 onClick={calculateIdealWeight} 
-                className="w-full gradient-purple text-white text-lg py-6 hover-lift"
-                size="lg"
+                className="w-full bg-gray-900 text-white hover:bg-gray-800 h-11"
               >
-                <Icon name="Calculator" size={20} className="mr-2" />
                 Рассчитать план
               </Button>
 
               {calculatorResult && (
-                <div className="mt-8 space-y-6 animate-scale-in">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200">
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center">
-                            <Icon name="Scale" size={24} className="text-white" />
-                          </div>
-                          <div>
-                            <p className="text-sm text-gray-600">Нужно сбросить</p>
-                            <p className="text-3xl font-bold text-purple-600">{calculatorResult.weightToLose} кг</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
+                <div className="mt-8 space-y-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="p-6 bg-gray-50 rounded-lg">
+                      <p className="text-sm text-gray-600 mb-1">Нужно сбросить</p>
+                      <p className="text-3xl font-bold text-gray-900">{calculatorResult.weightToLose} кг</p>
+                    </div>
 
-                    <Card className="bg-gradient-to-br from-orange-50 to-orange-100 border-orange-200">
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center">
-                            <Icon name="Calendar" size={24} className="text-white" />
-                          </div>
-                          <div>
-                            <p className="text-sm text-gray-600">Срок достижения</p>
-                            <p className="text-3xl font-bold text-orange-600">{calculatorResult.weeks} недель</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
+                    <div className="p-6 bg-gray-50 rounded-lg">
+                      <p className="text-sm text-gray-600 mb-1">Срок достижения</p>
+                      <p className="text-3xl font-bold text-gray-900">{calculatorResult.weeks} нед</p>
+                    </div>
 
-                    <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
-                            <Icon name="Activity" size={24} className="text-white" />
-                          </div>
-                          <div>
-                            <p className="text-sm text-gray-600">Текущий ИМТ</p>
-                            <p className="text-3xl font-bold text-blue-600">{calculatorResult.currentBMI}</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
+                    <div className="p-6 bg-gray-50 rounded-lg">
+                      <p className="text-sm text-gray-600 mb-1">Текущий ИМТ</p>
+                      <p className="text-3xl font-bold text-gray-900">{calculatorResult.currentBMI}</p>
+                    </div>
 
-                    <Card className="bg-gradient-to-br from-pink-50 to-pink-100 border-pink-200">
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center">
-                            <Icon name="Flame" size={24} className="text-white" />
-                          </div>
-                          <div>
-                            <p className="text-sm text-gray-600">Дефицит калорий/день</p>
-                            <p className="text-3xl font-bold text-pink-600">{calculatorResult.calorieDeficit}</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
+                    <div className="p-6 bg-gray-50 rounded-lg">
+                      <p className="text-sm text-gray-600 mb-1">Калорий/день</p>
+                      <p className="text-3xl font-bold text-gray-900">{calculatorResult.calorieDeficit}</p>
+                    </div>
                   </div>
 
-                  <Card className="bg-gradient-to-r from-purple-500 to-pink-500 text-white">
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
-                        <Icon name="Sparkles" size={32} className="mt-1 flex-shrink-0" />
-                        <div>
-                          <h3 className="text-xl font-bold mb-2">Ваш персональный план готов!</h3>
-                          <p className="text-purple-100">
-                            При здоровом темпе похудения (0.5-1 кг в неделю) вы достигнете целевого веса за {calculatorResult.weeks} недель. 
-                            Начните прямо сейчас с нашей программой!
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <div className="p-6 bg-gray-900 text-white rounded-lg">
+                    <h3 className="text-lg font-semibold mb-2">Ваш план готов</h3>
+                    <p className="text-gray-300 font-light">
+                      При темпе 0.5-1 кг в неделю вы достигнете целевого веса за {calculatorResult.weeks} недель
+                    </p>
+                  </div>
                 </div>
               )}
             </CardContent>
@@ -272,97 +207,71 @@ export default function Index() {
       </section>
 
       {/* Program Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4">
-            Программа трансформации
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16 text-gray-900">
+            Программа
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
-            Комплексный подход к здоровому похудению
-          </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
               {
-                step: '1',
+                step: '01',
                 title: 'Анализ',
-                description: 'Оценка состояния здоровья, пищевых привычек и образа жизни',
-                icon: 'ClipboardList'
+                description: 'Оценка состояния здоровья и образа жизни'
               },
               {
-                step: '2',
+                step: '02',
                 title: 'План питания',
-                description: 'Индивидуальное меню с учетом ваших предпочтений',
-                icon: 'UtensilsCrossed'
+                description: 'Индивидуальное меню с учетом предпочтений'
               },
               {
-                step: '3',
+                step: '03',
                 title: 'Тренировки',
-                description: 'Программа упражнений для дома или зала',
-                icon: 'Dumbbell'
+                description: 'Программа упражнений для дома или зала'
               },
               {
-                step: '4',
+                step: '04',
                 title: 'Результат',
-                description: 'Достижение цели и закрепление привычек',
-                icon: 'Trophy'
+                description: 'Достижение цели и закрепление привычек'
               }
             ].map((item, index) => (
-              <Card key={index} className="text-center hover-lift border-2 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full -mr-16 -mt-16 opacity-50"></div>
-                <CardHeader className="relative">
-                  <div className="w-20 h-20 mx-auto rounded-full gradient-purple text-white flex items-center justify-center text-3xl font-bold mb-4 animate-float">
-                    {item.step}
-                  </div>
-                  <CardTitle className="text-2xl mb-2">{item.title}</CardTitle>
-                  <div className="w-16 h-16 mx-auto gradient-orange rounded-2xl flex items-center justify-center">
-                    <Icon name={item.icon as any} size={28} className="text-white" />
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">{item.description}</p>
-                </CardContent>
-              </Card>
+              <div key={index} className="text-center">
+                <div className="text-4xl font-bold text-gray-200 mb-4">{item.step}</div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">{item.title}</h3>
+                <p className="text-gray-600 font-light">{item.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Results Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4">
-            Реальные результаты
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-gray-900">
+            Результаты
           </h2>
-          <p className="text-xl text-gray-700 text-center mb-16 max-w-2xl mx-auto">
-            Более 5000 довольных клиентов достигли своей цели
+          <p className="text-lg text-gray-600 text-center mb-16 font-light">
+            Более 5000 клиентов достигли своей цели
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: 'Анна, 32 года', result: '-18 кг за 3 месяца', progress: 95 },
-              { name: 'Сергей, 45 лет', result: '-25 кг за 5 месяцев', progress: 88 },
-              { name: 'Мария, 28 лет', result: '-12 кг за 2 месяца', progress: 92 }
+              { name: 'Анна', age: '32 года', result: '-18 кг за 3 месяца' },
+              { name: 'Сергей', age: '45 лет', result: '-25 кг за 5 месяцев' },
+              { name: 'Мария', age: '28 лет', result: '-12 кг за 2 месяца' }
             ].map((person, index) => (
-              <Card key={index} className="hover-lift border-2">
+              <Card key={index} className="border-0 shadow-sm bg-gray-50">
                 <CardHeader>
-                  <div className="w-full h-64 bg-gradient-to-br from-purple-200 via-pink-200 to-orange-200 rounded-xl mb-4 flex items-center justify-center">
-                    <Icon name="User" size={80} className="text-white" />
+                  <div className="w-full h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+                    <Icon name="User" size={60} className="text-gray-400" />
                   </div>
-                  <CardTitle className="text-2xl">{person.name}</CardTitle>
-                  <CardDescription className="text-lg font-semibold text-green-600">
+                  <CardTitle className="text-lg font-semibold text-gray-900">{person.name}, {person.age}</CardTitle>
+                  <CardDescription className="text-base font-medium text-gray-900">
                     {person.result}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-sm">
-                      <span>Прогресс</span>
-                      <span className="font-bold">{person.progress}%</span>
-                    </div>
-                    <Progress value={person.progress} className="h-3" />
-                  </div>
-                </CardContent>
               </Card>
             ))}
           </div>
@@ -370,48 +279,38 @@ export default function Index() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16">
-            Отзывы клиентов
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16 text-gray-900">
+            Отзывы
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 name: 'Елена Петрова',
-                rating: 5,
-                text: 'Потрясающая программа! Я наконец-то смогла похудеть без стресса и голода. Спасибо команде за поддержку!'
+                text: 'Потрясающая программа! Я смогла похудеть без стресса и голода.'
               },
               {
                 name: 'Дмитрий Иванов',
-                rating: 5,
-                text: 'Результат превзошел все ожидания. Сбросил 20 кг и чувствую себя на 10 лет моложе!'
+                text: 'Результат превзошел все ожидания. Сбросил 20 кг.'
               },
               {
                 name: 'Ольга Смирнова',
-                rating: 5,
-                text: 'Индивидуальный подход и постоянная поддержка – это то, что мне было нужно. Рекомендую всем!'
+                text: 'Индивидуальный подход – это то, что мне было нужно.'
               }
             ].map((review, index) => (
-              <Card key={index} className="hover-lift border-2">
+              <Card key={index} className="border-0 shadow-sm bg-white">
                 <CardHeader>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-16 h-16 rounded-full gradient-purple flex items-center justify-center">
-                      <Icon name="User" size={28} className="text-white" />
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0">
+                      <Icon name="User" size={20} className="text-gray-600" />
                     </div>
-                    <div>
-                      <CardTitle className="text-xl">{review.name}</CardTitle>
-                      <div className="flex gap-1 mt-1">
-                        {[...Array(review.rating)].map((_, i) => (
-                          <Icon key={i} name="Star" size={16} className="text-yellow-500 fill-yellow-500" />
-                        ))}
-                      </div>
-                    </div>
+                    <CardTitle className="text-base font-semibold text-gray-900">{review.name}</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700 italic">"{review.text}"</p>
+                  <p className="text-gray-600 font-light leading-relaxed">{review.text}</p>
                 </CardContent>
               </Card>
             ))}
@@ -420,17 +319,17 @@ export default function Index() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-600 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            Готовы начать трансформацию?
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            Начните трансформацию
           </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Присоединяйтесь к тысячам людей, которые уже изменили свою жизнь
+          <p className="text-lg mb-10 text-gray-300 font-light">
+            Присоединяйтесь к тысячам людей, которые изменили свою жизнь
           </p>
-          <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-12 py-6 hover-lift">
-            Начать бесплатную консультацию
-            <Icon name="ArrowRight" size={20} className="ml-2" />
+          <Button size="lg" className="telegram-blue text-white px-10 py-6 text-lg rounded-lg shadow-sm hover:shadow-md transition-all">
+            <Icon name="Send" size={20} className="mr-2" />
+            Подписаться в Telegram
           </Button>
         </div>
       </section>
