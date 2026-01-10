@@ -35,15 +35,21 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 text-gray-900">
+      <section 
+        className="py-24 px-4 sm:px-6 lg:px-8 relative bg-cover bg-center"
+        style={{
+          backgroundImage: 'url(https://cdn.poehali.dev/files/a4ef76f5e97c11f0b8b716ff1222dddb_1.jpg)',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="relative max-w-4xl mx-auto text-center z-10">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 text-white drop-shadow-lg">
             Здоровое похудение
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto font-light">
+          <p className="text-xl sm:text-2xl text-white mb-12 max-w-2xl mx-auto font-light drop-shadow-md">
             Индивидуальная программа с научным подходом и гарантированным результатом
           </p>
-          <Button size="lg" className="telegram-blue text-white text-lg px-10 py-6 rounded-lg shadow-sm hover:shadow-md transition-all">
+          <Button size="lg" className="telegram-blue text-white text-lg px-10 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all">
             <Icon name="Send" size={20} className="mr-2" />
             Подписаться в Telegram
           </Button>
